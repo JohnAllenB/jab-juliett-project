@@ -8,7 +8,7 @@ $(document).ready(function() {
 });
 
 function generateNato(text) {
-  var natoAlphabet = {
+  var natoAlph = {
     'A': 'Alpha',
     'B': 'Bravo',
     'C': 'Charlie',
@@ -42,8 +42,8 @@ function generateNato(text) {
 
   for (var i = 0; i < upperText.length; i++) {
     var char = upperText[i];
-    if (natoAlphabet[char]) {
-      phonetic += natoAlphabet[char] + ' ';
+    if (natoAlph[char]) {
+      phonetic += natoAlph[char] + ' ';
     } else {
       phonetic += char + ' ';
     }
