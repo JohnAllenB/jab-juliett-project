@@ -3,6 +3,7 @@ $(document).ready(function() {
     var text = $('#inputText').val();
     var natoPhonetic = generateNato(text);
     var civilianPhonetic = generateCivilian(text);
+    //output nato & civ spellings
     $('#output').html('<strong>NATO:</strong> ' + natoPhonetic + '<br> <strong>Civilian:</strong> ' + civilianPhonetic);
   });
 });
@@ -13,6 +14,7 @@ $('#clearBtn').click(function() {
     $('#output').empty(); 
   });
 
+//nato alphabet
 function generateNato(text) {
   var natoAlph = {
     'A': 'Alpha',
@@ -43,6 +45,7 @@ function generateNato(text) {
     'Z': 'Zulu'
   };
 
+  //upper case text
   var upperText = text.toUpperCase();
   var phonetic = '';
 
@@ -58,6 +61,7 @@ function generateNato(text) {
   return phonetic.trim();
 }
 
+//civ alphabet
 function generateCivilian(text) {
   var civilianAlph = {
     'A': 'Adam',
@@ -88,6 +92,7 @@ function generateCivilian(text) {
     'Z': 'Zebra'
   };
 
+  //upper case text
   var upperText = text.toUpperCase();
   var phonetic = '';
 
