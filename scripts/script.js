@@ -1,13 +1,13 @@
 $(document).ready(function() {
   $('#generateBtn').click(function() {
     var text = $('#inputText').val();
-    var natoPhonetic = generateNatoPhonetic(text);
-    var civilianPhonetic = generateCivilianPhonetic(text);
-    $('#output').html('<strong>NATO Phonetic:</strong> ' + natoPhonetic + '<br><strong>Civilian Phonetic:</strong> ' + civilianPhonetic);
+    var natoPhonetic = generateNato(text);
+    var civilianPhonetic = generateCivilian(text);
+    $('#output').html('<strong>NATO:</strong> ' + natoPhonetic + '<br> <strong>Civilian:</strong> ' + civilianPhonetic);
   });
 });
 
-function generateNatoPhonetic(text) {
+function generateNato(text) {
   var natoAlphabet = {
     'A': 'Alpha',
     'B': 'Bravo',
@@ -52,8 +52,8 @@ function generateNatoPhonetic(text) {
   return phonetic.trim();
 }
 
-function generateCivilianPhonetic(text) {
-  var civilianMapping = {
+function generateCivilian(text) {
+  var civilianAlph = {
     'A': 'Adam',
     'B': 'Boy',
     'C': 'Charlie',
@@ -87,8 +87,8 @@ function generateCivilianPhonetic(text) {
 
   for (var i = 0; i < upperText.length; i++) {
     var char = upperText[i];
-    if (civilianMapping[char]) {
-      phonetic += civilianMapping[char] + ' ';
+    if (civilianAlph[char]) {
+      phonetic += civilianAlph[char] + ' ';
     } else {
       phonetic += char + ' ';
     }
