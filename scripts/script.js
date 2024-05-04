@@ -7,6 +7,12 @@ $(document).ready(function() {
   });
 });
 
+//clear button
+$('#clearBtn').click(function() {
+    $('#inputText').val('');
+    $('#output').empty(); 
+  });
+
 function generateNato(text) {
   var natoAlph = {
     'A': 'Alpha',
